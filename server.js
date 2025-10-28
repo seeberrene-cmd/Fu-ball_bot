@@ -1,31 +1,13 @@
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const twilio = require("twilio");
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;  // Twilio Account SID
-const authToken  = process.env.TWILIO_AUTH_TOKEN;   // Twilio Auth Token
+// Twilio konfigurieren
+const accountSid = "AC79a6df6719c97a9699303b246366dc32";       // Twilio Account SID
+const authToken = "d6b5bdda7626e0c71a610a6b43b9dac8";         // Twilio Auth Token
 const client = new twilio(accountSid, authToken);
 
-const whatsappFrom = "whatsapp:+14155238886";       // Twilio Sandbox Nummer
-const whatsappTo   = process.env.WHATSAPP_TO;       // Deine Nummer
-
-// Testnachricht senden
-client.messages.create({
-  from: whatsappFrom,
-  to: whatsappTo,
-  body: "✅ Testnachricht vom Render WhatsApp-Bot!"
-})
-.then(msg => console.log("✅ WhatsApp Testnachricht gesendet:", msg.sid))
-.catch(err => console.error("❌ Fehler beim Senden:", err));
-
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-// const twilio = require("twilio");
-
-// Twilio konfigurieren
-// const accountSid = "AC79a6df6719c97a9699303b246366dc32";       // Twilio Account SID
-// const authToken = "d6b5bdda7626e0c71a610a6b43b9dac8";         // Twilio Auth Token
-// const client = new twilio(accountSid, authToken);
-
-// const whatsappFrom = "whatsapp:+14155238886"; // Twilio Sandbox Nummer
-// const whatsappTo = "whatsapp:+4369010194410"; // Deine Telefonnummer
+const whatsappFrom = "whatsapp:+14155238886"; // Twilio Sandbox Nummer
+const whatsappTo = "whatsapp:+4369010194410"; // Deine Telefonnummer
 
 // Ligen-IDs für die API (Beispiel: football-data.org)
 const leagues = {
