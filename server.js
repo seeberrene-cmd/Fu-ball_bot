@@ -17,7 +17,7 @@ client.messages.create({
 .catch(err => console.error("❌ Fehler beim Senden:", err));
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const twilio = require("twilio");
+// const twilio = require("twilio");
 
 // Twilio konfigurieren
 const accountSid = "AC79a6df6719c97a9699303b246366dc32";       // Twilio Account SID
