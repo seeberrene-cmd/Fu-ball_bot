@@ -1,3 +1,20 @@
+const twilio = require("twilio");
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;  // Twilio Account SID
+const authToken  = process.env.TWILIO_AUTH_TOKEN;   // Twilio Auth Token
+const client = new twilio(accountSid, authToken);
+
+const whatsappFrom = "whatsapp:+14155238886";       // Twilio Sandbox Nummer
+const whatsappTo   = process.env.WHATSAPP_TO;       // Deine Nummer
+
+// Testnachricht senden
+client.messages.create({
+  from: whatsappFrom,
+  to: whatsappTo,
+  body: "✅ Testnachricht vom Render WhatsApp-Bot!"
+})
+.then(msg => console.log("✅ WhatsApp Testnachricht gesendet:", msg.sid))
+.catch(err => console.error("❌ Fehler beim Senden:", err));
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const twilio = require("twilio");
