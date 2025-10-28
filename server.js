@@ -3,12 +3,12 @@ const fetch = require("node-fetch");
 const twilio = require("twilio");
 
 // Twilio konfigurieren
-const accountSid = "DEIN_ACCOUNT_SID";       // Twilio Account SID
-const authToken = "DEIN_AUTH_TOKEN";         // Twilio Auth Token
+const accountSid = "AC79a6df6719c97a9699303b246366dc32";       // Twilio Account SID
+const authToken = "d6b5bdda7626e0c71a610a6b43b9dac8";         // Twilio Auth Token
 const client = new twilio(accountSid, authToken);
 
 const whatsappFrom = "whatsapp:+14155238886"; // Twilio Sandbox Nummer
-const whatsappTo = "whatsapp:+49DEINE_NUMMER"; // Deine Telefonnummer
+const whatsappTo = "whatsapp:+4369010194410"; // Deine Telefonnummer
 
 // Ligen-IDs für die API (Beispiel: football-data.org)
 const leagues = {
